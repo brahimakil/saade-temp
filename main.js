@@ -478,6 +478,7 @@ function setupInteractiveMap() {
         {
             name: "Saida Showroom",
             coords: { lat: 33.5599, lng: 35.3733 },
+            color: "blue",
             color: "blue"
         },
         {
