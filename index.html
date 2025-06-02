@@ -579,71 +579,250 @@
 
     <!-- JavaScript for Product Display and Interaction -->
     <script>
-        // Sample product data
+        // Real product data using images from the items folder
         const products = [
             {
                 id: 1,
-                name: "Classic White Wood",
-                category: "Wood Texture",
-                description: "A timeless white wood texture that adds elegance to any interior space.",
-                image: "https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                details: "Our Classic White Wood PVC panels recreate the look of painted wood with remarkable accuracy. The subtle grain texture and matte finish provide a sophisticated backdrop for both traditional and contemporary interiors. These panels are perfect for creating bright, airy spaces and can be used for accent walls, ceilings, or full room applications."
+                name: "Classic White Marble",
+                category: "Stone Texture",
+                colorCode: "#F5F5F5",
+                description: "Elegant white marble texture with subtle gray veining for luxury interiors.",
+                image: "items/1.jpg",
+                details: "Our Classic White Marble PVC panels recreate the timeless elegance of natural Carrara marble with remarkable accuracy. The subtle gray veining against a pristine white background creates a sophisticated look that enhances any interior. These lightweight panels are perfect for bathroom walls, kitchen backsplashes, or feature walls in living areas, offering the luxurious appearance of marble without the maintenance concerns or high cost."
             },
             {
                 id: 2,
-                name: "Rustic Oak",
+                name: "Natural Oak Wood",
                 category: "Wood Texture",
-                description: "Natural oak texture with authentic grain patterns and warm tones.",
-                image: "https://images.unsplash.com/photo-1604743579904-7f3735c4ddb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                details: "The Rustic Oak collection features deeply textured surfaces that faithfully reproduce the look and feel of reclaimed oak. Each panel showcases authentic grain patterns, knots, and natural color variations that bring warmth and character to any space. Ideal for creating statement walls in living rooms, offices, or retail environments."
+                colorCode: "#D4B48C",
+                description: "Warm oak texture with authentic grain patterns for a natural, inviting feel.",
+                image: "items/2.jpg",
+                details: "The Natural Oak Wood collection features meticulously reproduced wood grain textures that capture the warmth and character of genuine oak. Each panel showcases the natural variations, knots, and distinctive patterns that make real wood so appealing. These panels are ideal for creating cozy accent walls in living rooms, bedrooms, or commercial spaces where a touch of natural warmth is desired."
             },
             {
                 id: 3,
-                name: "Marble Luxe",
+                name: "Ivory Travertine",
                 category: "Stone Texture",
-                description: "Elegant marble texture with subtle veining and a polished finish.",
-                image: "https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                details: "Marble Luxe offers the timeless beauty of natural marble without the maintenance concerns. The panels feature realistic veining patterns and a semi-gloss finish that mimics polished stone. Perfect for creating luxurious bathroom walls, kitchen backsplashes, or accent features in commercial spaces."
+                colorCode: "#F7F3E3",
+                description: "Subtle travertine texture with a soft ivory tone for elegant, classic spaces.",
+                image: "items/3.jpg",
+                details: "Ivory Travertine offers the sophisticated look of natural stone with a warm, neutral palette that complements any design style. The subtle texture captures the distinctive porous character of travertine while maintaining a smooth, finished surface. These panels are perfect for creating timeless elegance in entryways, dining rooms, or spa-like bathrooms."
             },
             {
                 id: 4,
-                name: "Urban Concrete",
-                category: "Industrial",
-                description: "Modern concrete texture with industrial appeal and contemporary style.",
-                image: "https://images.unsplash.com/photo-1585314062604-1a357de8b000?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                details: "Urban Concrete captures the raw, industrial aesthetic of poured concrete with remarkable authenticity. The panels feature subtle variations in tone and texture, including small air pockets and trowel marks that create a truly realistic appearance. Ideal for contemporary interiors, commercial spaces, and industrial-style designs."
+                name: "Rustic Brick Red",
+                category: "Brick Texture",
+                colorCode: "#A63A24",
+                description: "Authentic weathered brick texture with rich red tones for industrial-chic designs.",
+                image: "items/4.jpg",
+                details: "Our Rustic Brick Red panels recreate the charm and character of exposed brick walls with remarkable realism. The rich red tones and textured surface mimic decades of natural aging, creating depth and visual interest. These lightweight panels are perfect for adding architectural interest to restaurants, retail spaces, or home interiors without the structural requirements of real brick."
             },
             {
                 id: 5,
-                name: "Midnight Slate",
+                name: "Slate Gray Stone",
                 category: "Stone Texture",
-                description: "Deep black slate with natural texture variations and matte finish.",
-                image: "https://images.unsplash.com/photo-1588271956798-5b9c0f9a7f0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                details: "Midnight Slate offers the sophisticated look of natural black slate with dimensional texture and subtle color variations. The non-reflective matte surface reduces glare while highlighting the authentic stone characteristics. Perfect for creating dramatic accent walls, fireplace surrounds, or feature areas in both residential and commercial settings."
+                colorCode: "#708090",
+                description: "Modern slate texture with varying gray tones for contemporary spaces.",
+                image: "items/5.jpg",
+                details: "Slate Gray Stone offers the sophisticated look of natural slate with dimensional texture and subtle color variations. The cool gray tones create a modern, versatile backdrop that works beautifully in both contemporary and transitional interiors. Perfect for creating dramatic accent walls, fireplace surrounds, or feature areas in both residential and commercial settings."
             },
             {
                 id: 6,
-                name: "Vintage Brick",
-                category: "Brick Texture",
-                description: "Authentic weathered brick texture with rich color variations.",
-                image: "https://images.unsplash.com/photo-1583362608855-d0213ad7f3a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                details: "Our Vintage Brick panels recreate the charm and character of exposed brick walls with remarkable realism. Each panel features authentic textures and color variations that mimic decades of natural aging. These lightweight panels are perfect for adding architectural interest to restaurants, retail spaces, or home interiors without the structural requirements of real brick."
+                name: "Polished Concrete",
+                category: "Industrial",
+                colorCode: "#ADA8A5",
+                description: "Sleek concrete texture with a polished finish for modern, urban aesthetics.",
+                image: "items/6.jpg",
+                details: "Polished Concrete captures the minimalist appeal of finished concrete with a smooth, refined surface. The subtle variations in tone create depth and interest while maintaining a clean, contemporary look. These panels are ideal for modern interiors, commercial spaces, and industrial-style designs where a sleek, urban aesthetic is desired."
             },
             {
                 id: 7,
-                name: "Brushed Metal",
-                category: "Industrial",
-                description: "Modern brushed metal finish with sleek, contemporary appeal.",
-                image: "https://images.unsplash.com/photo-1589810264340-0ce27bfbf751?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                details: "Brushed Metal panels provide the sleek, contemporary look of stainless steel with linear grain patterns and a subtle sheen. The surface resists fingerprints while maintaining the authentic appearance of metal. These panels are ideal for modern kitchens, commercial spaces, or anywhere a clean, industrial aesthetic is desired."
+                name: "Golden Teak",
+                category: "Wood Texture",
+                colorCode: "#C19A6B",
+                description: "Rich teak wood texture with golden undertones for warm, inviting spaces.",
+                image: "items/7.jpg",
+                details: "Golden Teak features the luxurious look of this prized tropical hardwood with its distinctive golden-brown tones and straight grain patterns. The warm coloration adds richness and depth to any space, creating an inviting atmosphere. These panels are perfect for adding warmth to feature walls, ceiling applications, or commercial spaces where a touch of sophistication is desired."
             },
             {
                 id: 8,
-                name: "Tropical Bamboo",
+                name: "Brushed Steel",
+                category: "Industrial",
+                colorCode: "#C0C0C0",
+                description: "Modern brushed metal finish with a sleek, contemporary industrial appeal.",
+                image: "items/8.jpg",
+                details: "Brushed Steel panels provide the sleek, contemporary look of stainless steel with linear grain patterns and a subtle sheen. The surface resists fingerprints while maintaining the authentic appearance of metal. These panels are ideal for modern kitchens, commercial spaces, or anywhere a clean, industrial aesthetic is desired."
+            },
+            {
+                id: 9,
+                name: "Charcoal Slate",
+                category: "Stone Texture",
+                colorCode: "#36454F",
+                description: "Deep charcoal slate with natural texture variations for dramatic impact.",
+                image: "items/9.jpg",
+                details: "Charcoal Slate offers a bold, dramatic look with its deep gray-black tones and authentic stone texture. The non-reflective matte surface reduces glare while highlighting the authentic slate characteristics. Perfect for creating statement walls in living rooms, offices, or retail environments where visual impact is desired."
+            },
+            {
+                id: 10,
+                name: "Weathered Barnwood",
                 category: "Wood Texture",
-                description: "Natural bamboo texture with distinctive patterns and warm coloration.",
-                image: "https://images.unsplash.com/photo-1597533849860-5a04f96d3e74?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                details: "Tropical Bamboo captures the distinctive grain patterns and nodes of natural bamboo with remarkable accuracy. The warm honey tones and subtle texture variations create a sense of natural warmth and exotic appeal. These panels are perfect for creating feature walls in hospitality settings, spas, or eco-conscious interior designs."
+                colorCode: "#967969",
+                description: "Rustic barnwood texture with weathered gray and brown tones for farmhouse style.",
+                image: "items/10.jpg",
+                details: "Weathered Barnwood captures the rustic charm of reclaimed wood with authentic weathering patterns and a mix of gray and warm brown tones. Each panel recreates the character and history of vintage barnwood, perfect for farmhouse-style interiors, rustic restaurants, or any space where a touch of nostalgia is desired."
+            },
+            {
+                id: 11,
+                name: "Cream Limestone",
+                category: "Stone Texture",
+                colorCode: "#E8DCCA",
+                description: "Soft cream limestone texture with subtle fossil patterns for natural elegance.",
+                image: "items/11.jpg",
+                details: "Cream Limestone recreates the gentle texture and warm neutral tones of natural limestone. The subtle fossil patterns and slight variations in color add authenticity and visual interest. These panels are ideal for creating a sense of timeless elegance in living rooms, entryways, or commercial spaces."
+            },
+            {
+                id: 12,
+                name: "Ebony Wood",
+                category: "Wood Texture",
+                colorCode: "#3D2B1F",
+                description: "Rich dark wood texture with dramatic grain patterns for luxury interiors.",
+                image: "items/12.jpg",
+                details: "Ebony Wood offers the luxurious look of this prized exotic hardwood with its rich, dark tones and distinctive grain patterns. The dramatic coloration creates a sense of sophistication and elegance in any space. These panels are perfect for creating accent walls in upscale residential or commercial interiors where a touch of luxury is desired."
+            },
+            {
+                id: 13,
+                name: "Sandstone Beige",
+                category: "Stone Texture",
+                colorCode: "#D2B48C",
+                description: "Natural sandstone texture with warm beige tones for Mediterranean-inspired spaces.",
+                image: "items/13.jpg",
+                details: "Sandstone Beige captures the warm, earthy appeal of natural sandstone with its subtle texture and neutral beige coloration. These panels create a sense of timeless elegance and work beautifully in Mediterranean-inspired interiors, sunrooms, or any space where a touch of natural warmth is desired."
+            },
+            {
+                id: 14,
+                name: "Vintage Terracotta",
+                category: "Terracotta",
+                colorCode: "#CD5C5C",
+                description: "Classic terracotta texture with rich, warm tones for rustic Mediterranean style.",
+                image: "items/14.jpg",
+                details: "Vintage Terracotta recreates the timeless appeal of traditional terracotta tiles with their warm, reddish-orange tones and subtle texture variations. These panels bring Mediterranean charm to any space and are perfect for creating accent walls in kitchens, dining areas, or outdoor living spaces."
+            },
+            {
+                id: 15,
+                name: "White Shiplap",
+                category: "Wood Texture",
+                colorCode: "#F8F8FF",
+                description: "Classic white shiplap texture for clean, coastal-inspired interiors.",
+                image: "items/15.jpg",
+                details: "White Shiplap offers the popular horizontal plank look that has become a staple in coastal and farmhouse design. The clean white finish brightens any space while the subtle shadow lines between planks add depth and architectural interest. These panels are perfect for creating a fresh, airy feel in bedrooms, bathrooms, or living areas."
+            },
+            {
+                id: 16,
+                name: "Copper Patina",
+                category: "Metal Texture",
+                colorCode: "#78866B",
+                description: "Aged copper texture with beautiful verdigris patina for unique accent walls.",
+                image: "items/16.jpg",
+                details: "Copper Patina recreates the distinctive look of aged copper with its beautiful green-blue verdigris effect. The rich, varied coloration and subtle texture create a unique focal point in any space. These panels are ideal for accent walls in luxury bathrooms, restaurants, or any interior where a touch of artistic elegance is desired."
+            },
+            {
+                id: 17,
+                name: "Walnut Wood",
+                category: "Wood Texture",
+                colorCode: "#5C4033",
+                description: "Rich walnut wood texture with deep brown tones for sophisticated interiors.",
+                image: "items/17.jpg",
+                details: "Walnut Wood features the distinctive rich brown tones and straight grain patterns that make this hardwood so prized in fine furniture. The warm, sophisticated coloration adds depth and elegance to any space. These panels are perfect for creating feature walls in executive offices, dining rooms, or upscale commercial environments."
+            },
+            {
+                id: 18,
+                name: "Ivory Ceramic",
+                category: "Ceramic Texture",
+                colorCode: "#FFFFF0",
+                description: "Clean ivory ceramic texture with subtle variations for contemporary spaces.",
+                image: "items/18.jpg",
+                details: "Ivory Ceramic recreates the clean, refined look of ceramic tile with a warm ivory tone that softens contemporary spaces. The subtle surface variations add visual interest while maintaining a sleek, modern appearance. These panels are ideal for bathroom walls, kitchen backsplashes, or any area where a clean, water-resistant surface is desired."
+            },
+            {
+                id: 19,
+                name: "Distressed Blue Wood",
+                category: "Wood Texture",
+                colorCode: "#4682B4",
+                description: "Weathered wood texture with coastal blue tones for beach-inspired interiors.",
+                image: "items/19.jpg",
+                details: "Distressed Blue Wood captures the charm of weathered coastal structures with its faded blue finish and authentic wood grain texture. The casual, relaxed appearance brings a touch of seaside style to any space. These panels are perfect for creating accent walls in beach houses, coastal-themed restaurants, or any interior where a touch of nautical charm is desired."
+            },
+            {
+                id: 20,
+                name: "Beige Travertine",
+                category: "Stone Texture",
+                colorCode: "#E8D6B3",
+                description: "Warm beige travertine texture with natural pitting for classic elegance.",
+                image: "items/20.jpg",
+                details: "Beige Travertine offers the timeless appeal of this classic stone with its warm neutral tones and characteristic pitted texture. The subtle variations in color create depth and visual interest. These panels are ideal for creating a sense of refined elegance in entryways, bathrooms, or commercial spaces."
+            },
+            {
+                id: 21,
+                name: "Dark Mahogany",
+                category: "Wood Texture",
+                colorCode: "#4A0404",
+                description: "Rich, deep mahogany wood texture for luxurious traditional interiors.",
+                image: "items/21.jpg",
+                details: "Dark Mahogany captures the opulent look of this premium hardwood with its rich reddish-brown tones and distinctive grain patterns. The deep coloration creates a sense of traditional luxury in any space. These panels are perfect for creating accent walls in libraries, studies, or upscale commercial environments where a sense of heritage and sophistication is desired."
+            },
+            {
+                id: 22,
+                name: "Graphite Concrete",
+                category: "Industrial",
+                colorCode: "#474A51",
+                description: "Dark gray concrete texture with subtle variations for modern industrial style.",
+                image: "items/22.jpg",
+                details: "Graphite Concrete offers a bold, contemporary look with its deep gray tones and authentic concrete texture. The subtle variations create depth and visual interest while maintaining a sleek, modern appearance. These panels are ideal for creating dramatic feature walls in lofts, modern offices, or retail environments where an urban industrial aesthetic is desired."
+            },
+            {
+                id: 23,
+                name: "Whitewashed Pine",
+                category: "Wood Texture",
+                colorCode: "#E9E4D4",
+                description: "Light pine wood texture with a soft whitewashed finish for Scandinavian style.",
+                image: "items/23.jpg",
+                details: "Whitewashed Pine features the distinctive grain pattern of pine softened by a translucent white finish that allows the natural wood character to show through. The light, airy appearance creates a sense of Scandinavian simplicity and freshness. These panels are perfect for creating a bright, welcoming atmosphere in bedrooms, living areas, or casual dining spaces."
+            },
+            {
+                id: 24,
+                name: "Mosaic Tile",
+                category: "Ceramic Texture",
+                colorCode: "#B0C4DE",
+                description: "Decorative mosaic tile pattern with blue and white tones for Mediterranean flair.",
+                image: "items/24.jpg",
+                details: "Mosaic Tile recreates the intricate beauty of handcrafted tile work with its detailed pattern and harmonious blue and white color palette. The decorative design adds visual interest and Mediterranean charm to any space. These panels are ideal for creating feature walls in bathrooms, kitchens, or any area where a touch of artisanal character is desired."
+            },
+            {
+                id: 25,
+                name: "Honey Bamboo",
+                category: "Wood Texture",
+                colorCode: "#E4C28E",
+                description: "Natural bamboo texture with warm honey tones for eco-friendly interiors.",
+                image: "items/25.jpg",
+                details: "Honey Bamboo captures the distinctive grain patterns and nodes of natural bamboo with a warm honey finish that enhances its exotic appeal. The sustainable character of bamboo makes these panels perfect for eco-conscious design projects, creating feature walls in spas, yoga studios, or any space where a connection to nature is desired."
+            },
+            {
+                id: 26,
+                name: "Sage Green Shiplap",
+                category: "Wood Texture",
+                colorCode: "#9CAF88",
+                description: "Horizontal shiplap texture in a calming sage green for contemporary farmhouse style.",
+                image: "items/26.jpg",
+                details: "Sage Green Shiplap combines the popular horizontal plank design with a soothing sage green finish that adds a touch of color while remaining neutral and versatile. The subtle texture and gentle color create a sense of calm in any space. These panels are perfect for bedrooms, living areas, or any room where a fresh, updated farmhouse look is desired."
+            },
+            {
+                id: 27,
+                name: "Antique Tin Ceiling",
+                category: "Metal Texture",
+                colorCode: "#C0C0C0",
+                description: "Ornate pressed tin ceiling pattern for vintage-inspired accent walls.",
+                image: "items/27.jpg",
+                details: "Antique Tin Ceiling recreates the elaborate patterns of vintage pressed tin ceiling tiles with their intricate details and timeless appeal. The metallic finish adds a touch of glamour while the decorative design creates visual interest and historical character. These panels are ideal for creating feature walls in Victorian-inspired interiors, boutique retail spaces, or restaurants seeking a touch of nostalgic elegance."
             }
         ];
 
